@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <p>Click a city to get the weather forecast.</p>
+    <hr />
+
+    <h2>Available Cities from Local Database:</h2>
+    <form action="/" method="post">
+      {% for city in local_cities %}
+      <button type="submit" name="city_name" value="{{ city }}">
+        {{ city }}
+      </button>
+      {% endfor %}
+    </form>
+
+    <hr />
+
+    <h2>Available Cities Online:</h2>
+    <form action="/" method="post">
+      {% for city in online_cities %}
+      <button type="submit" name="city_name" value="{{ city }}">
+        {{ city }}
+      </button>
+      {% endfor %}
+    </form>
+
+    <hr />
+    {% if weather_data %}
+    <div class="weather-data">
+      <h3>Weather for {{ weather_data[0] }}:</h3>
+      <p>Current Temperature: {{ weather_data[1] }}</p>
+      <p>Weather Conditions: {{ weather_data[2] }}</p>
+      <p>Wind Speed: {{ weather_data[3] }}</p>
+      <p>Humidity: {{ weather_data[4] }}</p>
+    </div>
+    {% endif %} {% if message %}
+    <p class="message">{{ message }}</p>
+    {% endif %}
+  </body>
+</html>
