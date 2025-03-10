@@ -92,12 +92,12 @@ button {
   font-weight: bold;
 }
 
-/* Add a subtle animation for the weather display */
+/*  weather display */
 .weather-data p {
   animation: fadeIn 1s ease-out;
 }
 
-/* Add a subtle animation */
+/* animation */
 @keyframes fadeIn {
   from {
     opacity: 0;

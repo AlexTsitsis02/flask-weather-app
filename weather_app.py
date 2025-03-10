@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Function to fetch live weather data from OpenWeatherMap API
 def get_live_weather(city_name):
-    api_key = 'a8b53c92aeb9ddace6352d85d0e75c5b'  # Replace with your API key
+    api_key = 'a8b53c92aeb9ddace6352d85d0e75c5b'  
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}&units=metric'
 
     try:
